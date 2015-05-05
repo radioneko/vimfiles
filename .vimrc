@@ -47,13 +47,12 @@ let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_key_list_select_completion = ['<TAB>']
 let g:ycm_key_list_previous_completion = ['<S-TAB>']
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_global_ycm_extra_conf = '/home/inferno/.vim/ycm-default-conf.py'
 " UltiSnips
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-,>"
 let g:UltiSnipsJumpBackwardTrigger="<c-.>"
-"HiCursorWords
-hi! WordUnderTheCursor ctermfg=red cterm=bold
 
 if $COLORTERM =~ "mate\\|gnome"
 	set term=gnome-256color
@@ -130,3 +129,27 @@ inoremap jj <Esc>
 "inoremap <home> <C-o>g^
 "noremap  <end>  g$
 "inoremap <end>  <C-o>g$
+
+
+" Some hlper functions
+" Align
+function! AlignXX()
+python << EOF
+import re
+w = vim.current.window
+l, c = w.cursor
+s = l
+while s > 1 and re.search(r'\\$', w.buffer[s - 2]):
+	s = s - 1
+e = s
+lines = len(w.buffer)
+while e < lines and re.search(r'\\$', w.buffer[e - 1]):
+	e = e + 1
+# s, e - boundaries of long line (line numbers, starting from "1"
+if e > s:
+	vim.command("%d,%d Tabularize /,\\zs" % (s + 1, e))
+	vim.command("%d,%d Tabularize /\\\\" % (s, e))
+EOF
+endfunction
+
+command! -nargs=0 AlignXX call AlignXX()
