@@ -34,7 +34,7 @@ Plugin 'Julian/vim-textobj-variable-segment'
 Plugin 'tommcdo/vim-exchange'
 " fish shell syntax highlight
 Plugin 'fish-syntax'
-"Plugin 'Rip-Rip/clang_complete'
+Plugin 'Smart-Tabs'
 call vundle#end()
 filetype plugin on
 " *********************
@@ -71,7 +71,7 @@ set nowrap
 set smarttab
 let &termencoding=&encoding
 "cindent options
-set cino=:0,l1,g0
+set cino=:0,l1,g0,(0,u0,U0
 set foldmethod=marker
 set fileencodings=utf-8,koi8-r
 
