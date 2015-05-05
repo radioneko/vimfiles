@@ -1,0 +1,35 @@
+snippet pi "pitemize" b
+\begin{pitemize}
+	\item $0
+\end{pitemize}
+endsnippet
+
+snippet pe "penumerate" b
+\begin{penumerate}
+	\item $0
+\end{penumerate}
+endsnippet
+
+snippet s2s "server-to-server environment" b
+\begin{metad}
+$0
+\end{metad}
+endsnippet
+
+snippet c2s "client-server environment" b
+\begin{client}
+$0
+\end{client}
+endsnippet
+
+snippet tt "texttt" w
+\texttt{$0}
+endsnippet
+
+snippet mt "mbox + texttt" w
+\mbox{\texttt{$0}}
+endsnippet
+
+snippet mdef "declaration of a special macros" b
+\newcommand*{\\${1/_//g}}{\mbox{\texttt{{${1/_/\\_/g}}}} % ${1}
+endsnippet
