@@ -26,9 +26,12 @@ Plugin 'argtextobj.vim'
 " alternative file (header/source)
 Plugin 'a.vim'
 Plugin 'xterm-color-table.vim'
-" for comment text objects
+" for useful text objects
 Plugin 'kana/vim-textobj-user'
 Plugin 'glts/vim-textobj-comment'
+Plugin 'Julian/vim-textobj-variable-segment'
+" vim exchange via cxMOTION
+Plugin 'tommcdo/vim-exchange'
 " fish shell syntax highlight
 Plugin 'fish-syntax'
 "Plugin 'Rip-Rip/clang_complete'
@@ -110,13 +113,20 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 
+" tabular stuff
+vmap <Leader>a= :Tabularize /[+\-*/^\|\&]\?=/l1r1l0<CR>
+nmap <Leader>a= :Tabularize /[+\-*/^\|\&]\?=/l1r1l0<CR>
+vmap <Leader>a, :Tabularize /,\zs<CR>
+nmap <Leader>a, :Tabularize /,\zs<CR>
+nmap <Leader>a\ :Tabularize /\\$<CR>
+
 inoremap jj <Esc>
 " Adequate movement
-noremap  <down> gj
-inoremap <down> <C-o>gj
-noremap  <up>   gk
-inoremap <up>   <C-o>gk
-noremap  <home> g^
-inoremap <home> <C-o>g^
-noremap  <end>  g$
-inoremap <end>  <C-o>g$
+"noremap  <down> gj
+"inoremap <down> <C-o>gj
+"noremap  <up>   gk
+"inoremap <up>   <C-o>gk
+"noremap  <home> g^
+"inoremap <home> <C-o>g^
+"noremap  <end>  g$
+"inoremap <end>  <C-o>g$
