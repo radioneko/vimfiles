@@ -1,0 +1,13 @@
+snippet main "main declaration" b
+int main(int argc, char *argv[])
+{
+	$0
+	return 0;
+}
+endsnippet
+
+snippet for "iteration over container"
+for (${1:TYPE}::const_iterator ${2:i} = ${3:CONTAINER}.begin(), ${4:end} = $3.end(); $2 != $4; ++$2) {
+	$0
+}
+endsnippet

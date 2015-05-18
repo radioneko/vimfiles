@@ -51,8 +51,8 @@ let g:ycm_global_ycm_extra_conf = '/home/inferno/.vim/ycm-default-conf.py'
 " UltiSnips
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-,>"
-let g:UltiSnipsJumpBackwardTrigger="<c-.>"
+let g:UltiSnipsJumpForwardTrigger="\e."
+let g:UltiSnipsJumpBackwardTrigger="\e,"
 
 if $COLORTERM =~ "mate\\|gnome"
 	set term=gnome-256color
