@@ -34,7 +34,8 @@ Plugin 'Julian/vim-textobj-variable-segment'
 Plugin 'tommcdo/vim-exchange'
 " fish shell syntax highlight
 Plugin 'fish-syntax'
-Plugin 'Smart-Tabs'
+"Plugin 'Smart-Tabs'
+"Plugin 'lyuts/vim-rtags'
 call vundle#end()
 filetype plugin on
 " *********************
@@ -47,12 +48,15 @@ let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_key_list_select_completion = ['<TAB>']
 let g:ycm_key_list_previous_completion = ['<S-TAB>']
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_global_ycm_extra_conf = '/home/inferno/.vim/ycm-default-conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm-default-conf.py'
+nnoremap <leader>gd :YcmCompleter GoTo<CR>
 " UltiSnips
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="\e."
 let g:UltiSnipsJumpBackwardTrigger="\e,"
+" rtags
+let g:rtagsUseLocationList = 0
 
 if $COLORTERM =~ "mate\\|gnome"
 	set term=gnome-256color
@@ -97,6 +101,8 @@ au BufNew,BufNewFile,BufRead,FileType *.rl setlocal ts=4 sw=4 noexpandtab syntax
 au BufNew,BufNewFile,BufRead,FileType PROTOCOL,*.txt setlocal nocindent expandtab ts=2 sw=2 enc=utf-8
 au BufNew,BufNewFile,BufRead,FileType *.gdb setlocal syntax=gdb
 au BufNew,BufNewFile,BufRead,FileType nginx.conf,my.conf setlocal ts=4 sw=4 noexpandtab syntax=nginx
+" commentstring=#%s
+au FileType git,diff setlocal foldmethod=syntax
 let g:tex_flavor = "latex"
 "au BufNew,BufNewFile,BufRead,FileType *.tex,*.latex setlocal ts=4 sw=4 expandtab foldmethod=marker fenc=utf-8
 
