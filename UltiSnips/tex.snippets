@@ -10,6 +10,18 @@ snippet pe "penumerate" b
 \end{penumerate}
 endsnippet
 
+snippet ca "command args" b
+\begin{cmdargs}
+	\item $0
+\end{cmdargs}
+endsnippet
+
+snippet cr "command result" b
+\begin{cmdresult}
+	\item $0
+\end{cmdresult}
+endsnippet
+
 snippet s2s "server-to-server environment" b
 \begin{metad}
 $0
@@ -31,5 +43,5 @@ snippet mt "mbox + texttt" w
 endsnippet
 
 snippet mdef "declaration of a special macros" b
-\newcommand*{\\${1/_//g}}{\mbox{\texttt{{${1/_/\\_/g}}}} % ${1}
+\newcommand*{\\${1/_//g}}{\mbox{\texttt{${1/_/\\_/g}}}} % ${1}
 endsnippet
