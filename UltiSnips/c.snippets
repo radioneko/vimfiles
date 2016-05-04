@@ -5,3 +5,13 @@ int main(int argc, char *argv[])
 	return 0;
 }
 endsnippet
+
+snippet forc "iteration over array" b
+for (${1:i} = 0; $1 < COUNTOF(${2:array}); $1++) {
+	$0
+}
+endsnippet
+
+snippet spr "snprintf" b
+snprintf(${1:buf}, sizeof($1), "$0");
+endsnippet
