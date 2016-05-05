@@ -43,12 +43,14 @@ filetype plugin on
 " YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_use_ultisnips_completer = 1
-let g:ycm_add_preview_to_completeopt = 1
+"let g:ycm_add_preview_to_completeopt = 1
+"let g:ycm_show_diagnostics_ui = 1
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_key_list_select_completion = ['<TAB>']
 let g:ycm_key_list_previous_completion = ['<S-TAB>']
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm-default-conf.py'
+set completeopt-=preview
 nnoremap <leader>gd :YcmCompleter GoTo<CR>
 " UltiSnips
 let g:UltiSnipsEditSplit="vertical"
