@@ -11,3 +11,17 @@ for (${1:TYPE}::const_iterator ${2:i} = ${3:CONTAINER}.begin(), ${4:end} = $3.en
 	$0
 }
 endsnippet
+
+snippet chdr "C header template"
+#pragma once
+
+#ifdef __cplusplus
+extern "C" {
+#endif /* C++ */
+
+$0
+
+#ifdef __cplusplus
+}
+#endif /* C++ */
+endsnippet
