@@ -68,7 +68,7 @@ let g:UltiSnipsJumpBackwardTrigger="\e,"
 let g:rtagsUseLocationList = 0
 let g:rtagsUseDefaultMappings = 0
 
-if $COLORTERM =~ "mate\\|gnome"
+if $COLORTERM =~ "mate\\|gnome" || $TERM =~ "xterm-256color"
 	set term=gnome-256color
 	set t_Co=256
 	colorscheme desert256
@@ -92,6 +92,12 @@ set fileencodings=utf-8,koi8-r
 set exrc
 set secure
 set noswapfile
+
+"search parameters
+set incsearch
+set hlsearch
+"don't highlight search results from previous searches
+nohlsearch
 
 " clang complete
 let g:clang_jumpto_declaration_key = "<C-;>"
