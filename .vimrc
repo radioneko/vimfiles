@@ -37,6 +37,7 @@ Plugin 'tommcdo/vim-exchange'
 Plugin 'fish-syntax'
 "Plugin 'Smart-Tabs'
 Plugin 'lyuts/vim-rtags'
+Plugin 'moll/vim-bbye'
 Plugin 'jreybert/vimagit'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-syntastic/syntastic'
@@ -68,8 +69,8 @@ let g:UltiSnipsJumpBackwardTrigger="\e,"
 let g:rtagsUseLocationList = 0
 let g:rtagsUseDefaultMappings = 0
 
-if $COLORTERM =~ "mate\\|gnome" || $TERM =~ "xterm-256color"
-	set term=gnome-256color
+if $COLORTERM =~ "mate\\|gnome" || $TERM =~ "xterm-256color" || $TERM =~ "xterm"
+	"set term=gnome-256color
 	set t_Co=256
 	colorscheme desert256
 else
@@ -139,6 +140,7 @@ vmap <Leader>a= :Tabularize /[+\-*/^\|\&]\?=/l1r1l0<CR>
 nmap <Leader>a= :Tabularize /[+\-*/^\|\&]\?=/l1r1l0<CR>
 vmap <Leader>a, :Tabularize /,\zs<CR>
 nmap <Leader>a, :Tabularize /,\zs<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
 nmap <Leader>a\ :Tabularize /\\$<CR>
 
 inoremap jj <Esc>
@@ -154,7 +156,7 @@ inoremap jj <Esc>
 
 nnoremap <F2> :bp<CR>
 nnoremap <F3> :bn<CR>
-nnoremap <F4> :bdelete<CR>
+nnoremap <F4> :Bdelete<CR>
 nnoremap <F5> :cprevious<CR>
 nnoremap <F6> :cnext<CR>
 
@@ -181,5 +183,6 @@ endfunction
 
 command! -nargs=0 AlignXX call AlignXX()
 
+set guifont=terminesspowerline\ 14
 " Merlin stuff
 let no_ocaml_maps=1
