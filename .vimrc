@@ -1,5 +1,6 @@
 set nocompatible
 let mapleader = "\<Space>"
+let maplocalleader = "\<Space>"
 
 " *********************
 " Vundle activation
@@ -35,7 +36,9 @@ Plugin 'tommcdo/vim-exchange'
 " fish shell syntax highlight
 Plugin 'fish-syntax'
 "Plugin 'Smart-Tabs'
-"Plugin 'lyuts/vim-rtags'
+Plugin 'lyuts/vim-rtags'
+Plugin 'jreybert/vimagit'
+Plugin 'ctrlpvim/ctrlp.vim'
 call vundle#end()
 filetype plugin on
 " *********************
@@ -60,6 +63,7 @@ let g:UltiSnipsJumpForwardTrigger="\e."
 let g:UltiSnipsJumpBackwardTrigger="\e,"
 " rtags
 let g:rtagsUseLocationList = 0
+let g:rtagsUseDefaultMappings = 0
 
 if $COLORTERM =~ "mate\\|gnome"
 	set term=gnome-256color
@@ -84,6 +88,7 @@ set fileencodings=utf-8,koi8-r
 
 set exrc
 set secure
+set noswapfile
 
 " clang complete
 let g:clang_jumpto_declaration_key = "<C-;>"
@@ -97,7 +102,6 @@ command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 
 au BufNew,BufNewFile,BufRead,FileType *.torrent setlocal binary
 "au BufNew,BufNewFile,BufRead,FileType *.lisp,*.asd setlocal ts=2 sw=2 expandtab nocindent
-au BufNew,BufNewFile,BufRead,FileType *.c,*.h,*.hpp,*.cpp setlocal cindent noexpandtab
 au BufNew,BufNewFile,BufRead,FileType *.rl setlocal ts=4 sw=4 noexpandtab syntax=ragel
 "ts=4 sw=4
 "enc=utf-8 fenc=utf-8
@@ -139,6 +143,11 @@ inoremap jj <Esc>
 "noremap  <end>  g$
 "inoremap <end>  <C-o>g$
 
+nnoremap <F2> :bp<CR>
+nnoremap <F3> :bn<CR>
+nnoremap <F4> :bdelete<CR>
+nnoremap <F5> :cprevious<CR>
+nnoremap <F6> :cnext<CR>
 
 " Some hlper functions
 " Align
@@ -162,3 +171,6 @@ EOF
 endfunction
 
 command! -nargs=0 AlignXX call AlignXX()
+
+" Merlin stuff
+let no_ocaml_maps=1
