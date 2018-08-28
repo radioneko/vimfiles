@@ -77,7 +77,7 @@ if $COLORTERM =~ "mate\\|gnome" || $TERM =~ "xterm-256color" || $TERM =~ "xterm"
 else
 	colorscheme ron
 endif
-set ai incsearch
+set ai
 "let b:asmsyntax="nasm"
 set tabstop=4
 set softtabstop=4
@@ -100,14 +100,6 @@ set incsearch
 set hlsearch
 "don't highlight search results from previous searches
 nohlsearch
-
-" clang complete
-let g:clang_jumpto_declaration_key = "<C-;>"
-let g:clang_jumpto_back_key = '<C-:>'
-let g:clang_snippets = 1
-let g:clang_snippets_engine = 'clang_complete'
-let g:clang_library_path="/usr/lib/"
-"let loaded_ctx=1
 
 command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 
