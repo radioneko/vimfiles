@@ -10,7 +10,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'gregsexton/VimCalc'
 "Plugin 'bbchung/clighter'
-Plugin 'ihacklog/HiCursorWords'
+Plugin 'pboettch/vim-highlight-cursor-words'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
