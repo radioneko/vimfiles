@@ -39,8 +39,11 @@ Plugin 'fish-syntax'
 Plugin 'lyuts/vim-rtags'
 Plugin 'jreybert/vimagit'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-syntastic/syntastic'
 call vundle#end()
 filetype plugin on
+filetype indent on
+filetype plugin indent on
 " *********************
 
 " YouCompleteMe
