@@ -1,4 +1,7 @@
+syntax on
 set nocompatible
+set backspace=indent,eol,start
+
 let mapleader = "\<Space>"
 let maplocalleader = "\<Space>"
 
@@ -42,6 +45,7 @@ Plugin 'vim-scripts/desert256.vim'
 Plugin 'jreybert/vimagit'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'krisajenkins/vim-projectlocal'
 call vundle#end()
 filetype plugin on
 filetype indent on
