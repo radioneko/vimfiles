@@ -39,13 +39,16 @@ Plugin 'tommcdo/vim-exchange'
 " fish shell syntax highlight
 Plugin 'fish-syntax'
 "Plugin 'Smart-Tabs'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
 Plugin 'lyuts/vim-rtags'
 Plugin 'moll/vim-bbye'
 Plugin 'vim-scripts/desert256.vim'
 Plugin 'jreybert/vimagit'
-Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'krisajenkins/vim-projectlocal'
+Plugin 'rhysd/vim-clang-format'
 call vundle#end()
 filetype plugin on
 filetype indent on
@@ -156,6 +159,9 @@ nnoremap <F3> :bn<CR>
 nnoremap <F4> :Bdelete<CR>
 nnoremap <F5> :cprevious<CR>
 nnoremap <F6> :cnext<CR>
+
+" fzf shortcut
+nnoremap <C-p> :Files<CR>
 
 " Some hlper functions
 " Align
