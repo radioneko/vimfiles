@@ -160,9 +160,6 @@ nnoremap <F4> :Bdelete<CR>
 nnoremap <F5> :cprevious<CR>
 nnoremap <F6> :cnext<CR>
 
-" fzf shortcut
-nnoremap <C-p> :Files<CR>
-
 " Some hlper functions
 " Align
 function! AlignXX()

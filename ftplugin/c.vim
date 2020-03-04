@@ -6,6 +6,7 @@ setlocal cindent
 " navigation with rtags
 "noremap <buffer> <Leader>ri :call rtags#SymbolInfo()<CR>
 "SymbolInfo is broken (because of echo, use YcmCompleter)
+noremap <buffer> <Leader>rg :YcmCompleter GoToInclude<CR>
 noremap <buffer> <Leader>ri :YcmCompleter GetType<CR>
 noremap <buffer> <Leader>rj :call rtags#JumpTo(g:SAME_WINDOW)<CR>
 noremap <buffer> <Leader>rJ :call rtags#JumpTo(g:SAME_WINDOW, { '--declaration-only' : '' })<CR>
