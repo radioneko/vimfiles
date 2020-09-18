@@ -47,7 +47,8 @@ Plugin 'vim-scripts/desert256.vim'
 Plugin 'jreybert/vimagit'
 "Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'krisajenkins/vim-projectlocal'
+"Plugin 'krisajenkins/vim-projectlocal'
+Plugin 'thinca/vim-localrc'
 Plugin 'rhysd/vim-clang-format'
 call vundle#end()
 filetype plugin on
@@ -77,6 +78,9 @@ let g:UltiSnipsJumpBackwardTrigger="\e,"
 let g:rtagsUseLocationList = 0
 let g:rtagsUseDefaultMappings = 0
 
+" disable bracketed paste mode
+set t_BE=
+
 if $COLORTERM =~ "mate\\|gnome" || $TERM =~ "xterm-256color" || $TERM =~ "xterm"
 	"set term=gnome-256color
 	set t_Co=256
@@ -99,7 +103,7 @@ set foldmethod=marker
 set fileencodings=utf-8,koi8-r
 
 set exrc
-set secure
+set nosecure
 set noswapfile
 
 "search parameters
