@@ -50,6 +50,9 @@ Plugin 'vim-syntastic/syntastic'
 "Plugin 'krisajenkins/vim-projectlocal'
 Plugin 'thinca/vim-localrc'
 Plugin 'rhysd/vim-clang-format'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'bogado/file-line'
+"Plugin 'zxqfl/tabnine-vim'
 call vundle#end()
 filetype plugin on
 filetype indent on
@@ -57,7 +60,7 @@ filetype plugin indent on
 " *********************
 
 " YouCompleteMe
-let g:ycm_server_python_interpreter = '/usr/bin/python2.7'
+let g:ycm_server_python_interpreter = '/usr/bin/python3.8'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_use_ultisnips_completer = 1
 "let g:ycm_add_preview_to_completeopt = 1
