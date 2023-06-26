@@ -1,8 +1,16 @@
 #! /usr/bin/env python2
 import os
 
-default_cflags = ['-xc', '-std=c99', '-D_GNU_SOURCE', '-I/usr/include/libxml2']
-default_cxxflags = ['-xc++', '-std=c++11', '-D_GNU_SOURCE', '-I/usr/include/libxml2', '-I/opt/opencv3/include', '/opt/opencv3/include/']
+def inc_path(p):
+    if p[0] == '/':
+        return p
+    else:
+        return '/usr/include/' + p
+
+common_inc = ['-I' + inc_path(x) for x in ['libxml2', 'hs', 'apr-1']]
+
+default_cflags = ['-xc', '-std=c99', '-D_GNU_SOURCE', ] + common_inc
+default_cxxflags = ['-xc++', '-std=c++1z', '-D_GNU_SOURCE', '-I/opt/opencv3/include'] + common_inc
 
 def FlagsForFile(filename, **kwargs):
     try:

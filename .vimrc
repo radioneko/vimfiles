@@ -19,7 +19,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'SirVer/ultisnips'
 Plugin 'chrisbra/SudoEdit.vim'
 " Cool alignment stuff
@@ -50,8 +50,10 @@ Plugin 'vim-syntastic/syntastic'
 "Plugin 'krisajenkins/vim-projectlocal'
 Plugin 'thinca/vim-localrc'
 Plugin 'rhysd/vim-clang-format'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'bogado/file-line'
+Plugin 'jpalardy/vim-slime'
+"Plugin 'ctrlpvim/ctrlp.vim', { 'for': ['ocaml'] }
 "Plugin 'zxqfl/tabnine-vim'
 call vundle#end()
 filetype plugin on
@@ -60,7 +62,7 @@ filetype plugin indent on
 " *********************
 
 " YouCompleteMe
-let g:ycm_server_python_interpreter = '/usr/bin/python3.8'
+let g:ycm_server_python_interpreter = '/usr/bin/python3.11'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_use_ultisnips_completer = 1
 "let g:ycm_add_preview_to_completeopt = 1
@@ -80,6 +82,13 @@ let g:UltiSnipsJumpBackwardTrigger="\e,"
 " rtags
 let g:rtagsUseLocationList = 0
 let g:rtagsUseDefaultMappings = 0
+" Merlin
+let g:merlin_disable_default_keybindings = 0
+
+let g:slime_target = "vimterminal"
+let g:slime_vimterminal_cmd = "utop"
+let g:slime_vimterminal_config = {"term_finish": "close"}
+let g:slime_paste_file = "/tmp/.vim-slime"
 
 " disable bracketed paste mode
 set t_BE=
@@ -143,12 +152,14 @@ let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 
 " tabular stuff
-vmap <Leader>a= :Tabularize /[+\-*/^\|\&]\?=/l1r1l0<CR>
-nmap <Leader>a= :Tabularize /[+\-*/^\|\&]\?=/l1r1l0<CR>
-vmap <Leader>a, :Tabularize /,\zs<CR>
-nmap <Leader>a, :Tabularize /,\zs<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-nmap <Leader>a\ :Tabularize /\\$<CR>
+vnoremap <Leader>a= :Tabularize /[+\-*/^\|\&]\?=/l1r1l0<CR>
+nnoremap <Leader>a= :Tabularize /[+\-*/^\|\&]\?=/l1r1l0<CR>
+vnoremap <Leader>a, :Tabularize /,\zs<CR>
+nnoremap <Leader>a, :Tabularize /,\zs<CR>
+nnoremap <Leader>a: :Tabularize /:\zs<CR>
+vnoremap <Leader>a: :Tabularize /:\zs<CR>
+nnoremap <Leader>a\ :Tabularize /\\$<CR>
+vnoremap <Leader>a\ :Tabularize /\\$<CR>
 
 inoremap jj <Esc>
 " Adequate movement
@@ -190,6 +201,6 @@ endfunction
 
 command! -nargs=0 AlignXX call AlignXX()
 
-set guifont=terminesspowerline\ 14
+set guifont=xos4\ Terminus\ 13
 " Merlin stuff
 let no_ocaml_maps=1
