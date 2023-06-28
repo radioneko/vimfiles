@@ -53,6 +53,7 @@ Plugin 'rhysd/vim-clang-format'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'bogado/file-line'
 Plugin 'jpalardy/vim-slime'
+Plugin 'Thyrum/vim-stabs'
 "Plugin 'ctrlpvim/ctrlp.vim', { 'for': ['ocaml'] }
 "Plugin 'zxqfl/tabnine-vim'
 call vundle#end()
